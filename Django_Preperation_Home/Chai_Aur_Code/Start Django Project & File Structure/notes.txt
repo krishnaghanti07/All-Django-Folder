@@ -1,0 +1,100 @@
+// First Video //
+
+Django is also called as --> Expert Framework of Rapid Development (It's also very mature framework).
+
+// Django makes it easier to build better web apps more quickly and with less code.
+
+// Features of Django :--
+    1.) Ridiculously fast.
+    2.) Reassuringly secure. (CSRF Protection) 
+    3.) Exceedingly scalable. (Provides Better Scalability in Bare-Minimum System) 
+
+( JavaScript required slightly high-end System(Ram, Processor) than Django like Old-Frameworks).
+
+// Specially, Professionally, Python is not installed and worked upon a specific Version, (For Development Purpose)
+// Generally, we prefer to develop things in a 'Virtual Environment' or like 'inside a box' separately...
+(For that "Virtual-Environment" is generally used in 'Python') --> (our code goes to ==> a separate Instance / a separate Sand-Box) 
+---> (it's doesn't that much care about what is installed in our Main-System)   // that's why everyone is Buiding 'Virtual Environment' in Django
+
+
+// // Commands of 'Virtual Environment' :--
+        1.) py -m venv .venv (For Windows)
+        ( venv --> gives us Virtual-Environment, inside ".venv" folder[hidden-folder contains all the settings file] )
+
+        // In 'Mac' or 'Linux' we've already have by-default installed a Py-2B
+
+
+// // But, here we'll use 'uv' insted of 'venv' (As 'uv' is more faster than 'venv') 
+( Like in JavaScript Environment 'npm' is generally used, but there is 'bun' package manager that is increadibly fast )
+ ( Similarly, in Python Environment 'pip' is generally used, but 'uv' is extreamly fast python package installer and resolver) (Written in Rust) (Worked upon many parsers)
+
+
+// // To create our "Virtual Environment" :-- (we've to use Command) :
+------> uv venv
+
+// Then we've got the file-structure, we've the "Activation Libraries" installed inside the "Scripts" folder
+// // Next, we've to run the "activate" - script --> after that, our "Virtual Environment" will be activated..
+
+
+// // Command to activate my Django Project :--
+------> .venv\Scripts\activate
+// // To de-activate the same project after activate :--
+------> deactivate
+
+
+// // From now onwards, to install any package into the virtual environment :---
+------> we've to to write "uv" as a 'prefix' to install anything (As the virtual-environment was created using uv)
+( Example:--  uv pip install "package @ ." )
+
+
+// // Next, we've to install "Django" into the 'Virtual-Environment' :--
+------> 'uv pip install Django'
+
+
+// // Now, we'll create a new "Django-Project"
+
+// After installing 'django' , we can use "django-admin" (automatically installed)
+
+1.) ' django-admin startproject "Project-Name" ' ---> this command is used once to create a "Django Project"  (Multiple little-little apps will be created)
+
+// // Whenever a Django project is created, "Main-Project" and a "Sub-Folder" of same-name will be created, Standerd Practise)
+-----> The Django Project will be created at the same level of the "Virtual-Environment"
+
+// Next, we've to go inside into the "newly-created Project-File", there will be an "manage.py" file (can be viewed with the "ls" command)
+// Then, we'll run the "manage.py" file, ---> (Command :  python manage.py runserver )
+
+// // Now, we'll see some 'Error' over there, ( admin, auth, contenttypes, sessions ) // // But, we'll ignore that part for now, and learn abouth it later
+// // We'll also get : 
+-----> Watching for file changes with StatReloader
+-----> Performing system checks...
+-----> System check identified no issues (0 silenced).
+// And, we'll also get a "db.sqlite" file created...
+
+// // The "Django-Project" by default runs on the port : '8000' ---> (Command :  python manage.py runserver )
+// If we go to the 'localhost:8000' ---> we can see the "Django-Page" (First Project)
+// // In case the default-port is blocked or is being used by some other ---> (run Command :  python manage.py runserver port_number )
+
+2.) ' django-admin startapp "Project-Name" ' ----> 
+
+
+
+// // File Exploration :--- ( How the Django Works )
+    
+    1.) "manage.py" --> Starting point file, sets may things like 'environment-variables', invoke the system after go to the production 
+    ( this file run the first time )
+
+    // // One thing we've to remember, that now, we'll create many folders, and we've to know the exact 'indentation' of the folder 
+    ( what is the level of the folder, "manage.py"-level or "inside-folder"-level / "project"-level or "app"-level )
+    "root-level" ---> same level as the level of "manage.py"-level
+
+    // // " sqlite-3 " ---> default-database used in Django
+    // what code is written here, no connection with "mysql", "sqlit", "postgrey" 
+    ----> (at any moment of time we can shift from one database-type to another one ==> by simply setting some configuration or code)
+    ====> ( Django supports the NoSQL-DataBase also very-well )   (But sql-database is more convenient ---> sql require less interaction, we've to not to write sql-code)
+
+
+    2.) "Project"-Folder ---> (we can make a separate app with this folder & work through it, generally we do very basic work via it)
+
+    3.) "__pycache__" (Cache-Folder) ---> (the cache folder is created when we've multiple module of python, it provides optimization )
+
+    4.) "settings.py" ----> (we go to this important file for few time only, Here all the configuration of Django is written)
