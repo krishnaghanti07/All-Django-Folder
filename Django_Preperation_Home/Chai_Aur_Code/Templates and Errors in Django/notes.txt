@@ -1,0 +1,11 @@
+// // In this Lecture, we'll see the flow structure of Django, so that, we don't face any issue in our Django-Appliaction 
+// The flow of Django goes exactly same, not deoending upon how much complex the Django Application is ...
+
+
+// // We'll understand & see(read) a Diagram, and will covert the diagram into code, to understand the flow, structure, working...
+
+// Django ---> this is a web-framework, (All the Web-Framework use some Tech-Stack under the hood ===> to know the details about request, responce, like browse-networks) 
+// { Django can't by-default determine about the request-responce coming ===> some events triggers, which do the task behind the scene }
+
+// // The flow we have is very simple, ---> One a single-flow is there, not thousand (Only 3-4 things are involved there, and always those were involved... ) 
+====> That's why Django provides that's fast-development, and relibility...

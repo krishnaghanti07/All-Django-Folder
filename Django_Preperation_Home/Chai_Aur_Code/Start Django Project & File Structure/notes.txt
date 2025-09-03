@@ -97,4 +97,27 @@ Django is also called as --> Expert Framework of Rapid Development (It's also ve
 
     3.) "__pycache__" (Cache-Folder) ---> (the cache folder is created when we've multiple module of python, it provides optimization )
 
-    4.) "settings.py" ----> (we go to this important file for few time only, Here all the configuration of Django is written)
+    4.) "settings.py" ----> (we go to this important file for few time only, Here all the configuration of Django is written) 
+    // // (Base-Directory, Secret-Keys, Debugging, middlewares, templating, database, Authentication-Validation, Time-Zone, Language-Code, Static URL's)
+    // Debugging: true ==> page is visible
+    // Everything in Django is like a small small apps... ( though it can interact amoung themselves )
+    // Authentication ==> A large Admin-Panel is provided (ship-in) by-default
+
+    5.) "urls.py" (Routing FIle) ---> (from this file you can define teh routing, where you can go... (on which url)...
+    // // (what happen after go to the url, we discussed in a separate file..) (that file is not provides by-default, we've to make it)) ---> "views.py"
+    // All routes are defined here... But, the routes are not configured by-default, ---> to make it configured, we've to run some more commands...
+    // The Admin-ROute (Admin-Panel) is provided by-default
+
+    6.) "views.py" ---> (defines all our views-logic: (controllers, functionality, buisness-logic))
+    
+    7.) "models.py" ---> (defines all our databse-models & models-logic: (database, models))
+    // how things on Data-Bases remain structured & stored, (HTML, Hello World, )
+    // // How things are structured and remained stored in databases, 
+
+
+    **) Django-Application data-flow / control-flow, :--
+    // // url-file hitted ==> dedicated-route handled ==> control of the files goes to 'views' 
+    ==> we can write the buisness-logic ==> we can return things as per our desired ==> 
+
+
+    // // Too much rapid development, too much fast
