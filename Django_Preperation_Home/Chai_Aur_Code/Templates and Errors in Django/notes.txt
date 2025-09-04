@@ -9,3 +9,60 @@
 
 // // The flow we have is very simple, ---> One a single-flow is there, not thousand (Only 3-4 things are involved there, and always those were involved... ) 
 ====> That's why Django provides that's fast-development, and relibility...
+
+
+// // Diagram Explanation :--
+
+// "User" ---> required some request-responce model, (Login, perform some action on a website) ['User' --> fires a browser & make a request to the website-server]
+// The request goest to the "Django-Server", (Django find-out, from where the request came.. and what resources you want to access.. )
+
+// "URL Resolver" ---> it's basically resolve the url-request (Where / which route you've to go) [This is a inbuilt file in django, mostly we don't came to this file]
+// ====> The URL-Resolver finally access a file called "urls.py", 
+
+// "urls.py" ---> we've already visited this file, (here the 'resolvers' are present.. like "admin/", we may have more resolvers also..)                                     [Modular-Code]
+// (==> But, we might not always come-up to the main 'urls.py' file, as there are multiple little-apps in django, the 'urls.py' file may redirect control to another urls.py file) [-of another app]
+// ====> Now, the "urls.py" file sends you to the "views.py" file..
+
+// "views.py" ---> (but if the file isn't visible, it isn't that it it's not present, we can make it also..)
+// [===> Inside the directory --> inside the project --> we'll create the file "views.py"]
+// ["Views.py"]---> { this is our main-conroller,(with the access of database Read & Update Options), (where we'll write the main-logic),---> [to send a direct responce, or to contact with the "Data-Base" via "Model.py"] }
+(=====> the "views.py" file also can direct contact with Data-Base with the help of ORMs ) ---> then, we can perform operations with Data-Base (like: Read, Write, Update, Delete) [CRUD]
+
+// [----> After writing the logic, we've to send the responce to the frontend, ===> (the responce directly goes to the "Django") ----> And "Django passes the responce to the "User" ]
+// // ---> {Sometimes the "Views.py" file uses some 'Templates', and sends Responce via Templates..}
+
+
+
+// // Simplified Architecture :--
+//  "User"------>"req"------>"urls.py"------>"views.py"------>"res"
+
+// // There are different types to send the responce back to the "User", from the "Views.py" :--- [Send Responce After Data-Base Query, Directly Send Responce, Sends Through Templates, Sends After Performing Some Task..]
+
+
+// // First moves to the "views.py" file :--
+// Write the methods, and it's contents, as per our requirments, ---> (we've write what we want inside the views),   <> [Exports is not required in Python]
+// ===> Next, we've to handle the Urls, (Not a big deal)
+
+// ---> we're provided some comments, and some examples are also provided..
+// To use the "Views" ---> "urls" will come, (And, we don't know, which urls-Views we've to hit, ===> so, we've to tell in the url itself, which method we want to hit, "About-method" or "Contact-Mothos")
+// ====> So, we'll write a path here...(After importing the 'views'from the current-directory, as it's required).. {We've now different route-access} 
+// ---> Along with that, we'll pass a optional-parameter, which'll help us later-on that is "name", {it'll define the 'name' of the whole 'Route' or 'Method'}  // {If we'll don't add this also, it'll not create any error}
+
+
+// //  Now, we'll make the routes like that, the same way...
+//  path('', views.home, name='home'),
+//  path('about/', views.about, name='about'),
+//  path('contact/', views.contact, name='contact'),
+
+// // Next, run the Server {python manage.py runserver},... making sure that your project-directory is activated..{.venv/Scripts/activate}
+// Now, you'll see and get the responce on the browser's localhost (http://127.0.0.1:8000/) [Default port for Django] ----> You can go and move to any Page..(by simply changing the urls)
+// Now, from the browser we can go and jumps between the pages from one to another, by simply changing the route...(from / in the url) ----> [Our, pages are rendering now..]
+
+
+// // Responce is always being sent by the "views.py" file....
+
+// // "Templates" :-- templates in Django is one of the most powerful templates to work with (Like layout.file in Next.js)
+// ===> Now, we've to make the template files, ---> To determine where we've to make the templates, we've to know, 1.) how we're looking the files, 2.) what setting we've made (changable)
+
+// // Now, inside the Project-Directory... At the project-level, we've to create two folders / directory ... "templates" and "static"
+// "templates - folder" :-- [This folder will contains 'HTML' files..]   // "static - Folder" :-- [This folder will contain CSS and JavaScripts files...]   ( It can be changable, while creting the sub-apps )
