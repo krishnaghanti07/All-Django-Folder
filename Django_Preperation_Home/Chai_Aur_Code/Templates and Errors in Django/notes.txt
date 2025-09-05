@@ -66,3 +66,31 @@
 
 // // Now, inside the Project-Directory... At the project-level, we've to create two folders / directory ... "templates" and "static"
 // "templates - folder" :-- [This folder will contains 'HTML' files..]   // "static - Folder" :-- [This folder will contain CSS and JavaScripts files...]   ( It can be changable, while creting the sub-apps )
+
+// After that, we'll create corresponding files( HTML, CSS & JavaScripts ) according to the mention above, and fill the contents of the files as well..
+// Now, we want to load and return-back the template I've made...  -----> {Now, views can do this task / work}
+
+// // Till now we're performing "HttpResponse", But, now, we've to render (to send a HTML Page) one entire template ----> [for that, we've to take help of 'render' from "django.shortcuts" ] (It's used in multiple palces..)
+
+// // Now, one question can arise in our mind that, how, Django internally get-to-know that, we're putting the files indside "templates-folder", and we've to return the "index.file"
+
+// // Here, now we're getting some Error... (If we're applied "Debugging: true", we'll get all teh details of the errors, all the responses, logs, settings )
+
+// "Template-Does-Not-Exist" Error :-- 
+// (Resolving the Error) :-- "You've write all the Templates, Views, those all are correct.." ---> (You've wrote everything very well, but, forget to tell the "main-project" , from where to load the 'Templates')
+// ===> So, we'll go to the 'Settings.py' file, ---> In one Section, we'll get the "TEMPLATES" ---> And, we'll define, In which directory we'll get the "Django-Templates" ---> It may be Default, but we've to add them manually inside a 'single-quote'..
+// ===> For now, we'll write 'templates' (with single quotes) inside into the "DIRS" ---> Now, we've mentioned in the settings of the Django that from here we can get "Templates" -->["Templates" is present in the root directory, from there we can get it..]
+// ===> Now, we by-default mentioned the directory of the "templates", ---> and, inside the view, we know all the templates, and we can get the files accordingly, --> [There is a direct file is present: "index.html"]
+// ---> Now, the 'template' is exist, and properly defined and mentioned, ---> so that we can get the file, as expected, ---> So, the Error is now gone..
+
+
+// // Now, we'll go inside the "templates" folder... ----> Inside the "templates" folder, we'll create a folder named "website" --> {and, move the "index.html" file inside into it} --> [It's a common Structure] 
+// ===> Now, again "Template-Does-Not-Exist" Error will come.. ---> [Because now, the path we provided is not correct, First, we've to go to inside the "Website" folder, not directly to the 'index.html' file inside "Templates" directory] ==> {Update the views route accordingly}
+
+
+// // There is a such Directory-Structure, --> Where you can put several, multiple "Templates" folder ---> {We've a direct "Template"-folder, Whenever we're creating a new-app, all the app related info. & files will be there inside the "Templates" folder}
+
+// // Now, we want to add some more functionality to it, we want to add some more CSS and JavaScript along to it...
+// So, we'll now try to load some CSS over it... ===> So now, we'er something know and aware about the Directory-Structure about Django.. ---> [So, let's put some Static-Assets like:-- "images", "css", "javascripts" file etc..]
+
+// // Now, we'll make a new file inside the "Static" folder, that is "style.css" ---> Now, inside the file, we'll write some CSS, 
