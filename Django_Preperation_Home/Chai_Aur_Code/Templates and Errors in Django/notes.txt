@@ -93,4 +93,31 @@
 // // Now, we want to add some more functionality to it, we want to add some more CSS and JavaScript along to it...
 // So, we'll now try to load some CSS over it... ===> So now, we'er something know and aware about the Directory-Structure about Django.. ---> [So, let's put some Static-Assets like:-- "images", "css", "javascripts" file etc..]
 
-// // Now, we'll make a new file inside the "Static" folder, that is "style.css" ---> Now, inside the file, we'll write some CSS, 
+// // Now, we'll make a new file inside the "Static" folder, that is "style.css" ---> Now, inside the file, we'll write some CSS, {But, we'll learn the basic of stylings, because later we'll learn haw to integrate 'Tailwind' and other similar framework..}
+// Now, we've to determine, how to load CSS inside my HTML ---> {directly link 'CSS' inside 'HTML'},  // Now, the issue is that how we'll put the reference of the static-file (Stylesheet) ---> because the traditional / normal referencing will not be working ....
+// ---> Instead we'll get a referencing-Error, while try to get the file...  // So, here comes a special-type of structure / Engine ---> Taht's known as "Templating-Engine" --> {In Django the whole 'HTML-File' is worked as a Templating-Engine..}
+
+
+// // "Templating Engine" ---> You can inject your programatically-code to anywhere ... [You can add code in your HTML-file, inject data coming from views..] ---> Then, you can inject 'Template' there 
+// ====> So, we'll inject inside the "href" ---> "{% static 'style.css' %}" --> we want to load some static assets, that is "style.css"  // ==> (The keyword will remain mostly similar like this one) ..
+// ===> Now, we're facing some Errors, ---> we're getting some Errors like this : {"Invalid block tag on line 7: 'static'. Did you forget to register or load this tag?"} --->
+// ----> Whenever we're using some static-keyword or some static Assets, ---> [We've to tell the 'Template-Engine' that we've to load some "Static-Assets"] ---> So, we've to write at the top of the file, even above the 'doc-file' : "{% load static %}" ==> This is also a 'Templating-Engine"
+// ===> Now, we're getting the HTML-file rendered, and the Error has also gone, but, still we're not getting the CSS-file rendered..
+// ----> We're getting the 'style.css' in the page-source ---> we're getting it's reference from "/static/style.css" ---> "But, the file isn't present here, either we've to bring the whole-path or bring it from './' (current-directory) ,
+// =====> But, we're not able to access the path, because, the path / reference is not exist... (The path must be accessable..)
+
+
+// Now, to apply and to load the CSS, we've to make a final-setting, and the settings related-tasks and scripts are written inside: "settings.py" file... // // ---> The main-issue or problem is : [inside the 'settings.py', the 'STATIC_URL' is defined like a wrong-way... ]
+// ===> But, to start the 'static-url', we've to tell some "static-directory" also... ---> {We're trying to say that, our static-assets are present there, and load it completely as "complete-path", whenever you wnat or need.. }
+// Now, we'll go to the top of the file (Settings.py), and import the 'OS-Libraty', (provided by-default), ----> Next, we've to go to the Base-Directory, {By-Default Provided..}
+
+
+// // "OS library" ---> we always have a "Base-Directory" ==> {"that's always tells us how the path will be resolved, or, the complete path of the whole-application "} 
+// ---> And also, that's why, whenever, we're trying to deploy it, we'll not see that much difficulty or changes, because, the base-directory resolves it from the parent-directory automatically by-default.. 
+// ---> {In Django, the development is very very close to the Production} ---> [It's a one of the most helpful ] ---> So, now we'll make a new Settings...
+// =====> We've to go to the place, under the "Static_URL"s residing... ---> And, we've to add a "New-Setting" ---> 'STATICFILES_DIRS'  ====> [In the shake of 'Production-Practise' we should add this strictly here only, for the best-practise, we shouldn't add this in other place (for better readibility)]
+// -----> Now, to load this, we've to put write : "[os.path.join(BASE_DIR, 'static')]" ----> with the help of 'OS' we've to join the path between "BASE_DIR" and "static" ----> Now, my whole 'Base-Directory' & 'Files' are knew, from where we've to load the 'static-assets'
+// -----> And, it'll give the whole 'file-path' after loading...  ====> After everything getting done, & giving the access, ----> After reloading ---> The 'Static-Files' (CSS & JavaScripts) will be injected to the HTML-Page(file) ---> Now, we know the flow-of-injecting, irrespective of the Static-file-type (CSS or JS)
+
+
+// // Now, if we want to add / insert 'static-javascript' or some other 'static-files', or we want to further make some other folder ----> Then, we know that, how to work further... and how to make changes insside 'index.html'
